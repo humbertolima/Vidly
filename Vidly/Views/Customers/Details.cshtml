@@ -1,0 +1,31 @@
+﻿@model Vidly.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<hr/>
+<ul>
+    @if (Model.Birthdate != null)
+    {
+
+        <li>Date of Birth: @Model.Birthdate.Value.ToLongDateString()</li>
+
+    }
+
+    <li>
+        Membership Type: @Model.MembershipType.Name
+    </li>
+    <li>
+        Discount Rate: @Model.MembershipType.DiscountRate%
+    </li>
+
+</ul>
+
+<hr/>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
